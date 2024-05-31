@@ -74,50 +74,125 @@
    margin: 15px 0;
 } */
 
-.ghost {
-   border-radius: 20px;
-   border: 1px solid #ff4b2b;
-   background-color: #ff4b2b;
-   color: #ffffff;
-   font-size: 12px;
-   font-weight: bold;
-   padding: 12px 45px;
-   letter-spacing: 1px;
-   text-transform: uppercase;
-   transition: transform 80ms ease-in;
+/* Shared styles for both buttons */
+.Btn,
+.Btn2 {
+   width: 140px;
+   height: 40px;
+   border: none;
+   border-radius: 10px;
+   background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+   background-size: 250%;
+   background-position: left;
+   color: #ffd277;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition-duration: 1s;
+   overflow: hidden;
 }
 
-
-
-.ghost {
-   background-color: transparent;
-   border-color: #ffffff;
+.Btn::before,
+.Btn2::before {
+   position: absolute;
+   content: "";
+   color: #ffd277;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 97%;
+   height: 90%;
+   border-radius: 8px;
+   transition-duration: 1s;
+   background-color: rgba(0, 0, 0, 0.842);
+   background-size: 200%;
 }
 
-.ghost:hover {
-   background-color: #fff;
-   color: #ff4b2b;
+.Btn:hover,
+.Btn2:hover {
+   background-position: right;
+   transition-duration: 1s;
 }
 
-.ghost:active {
+.Btn:hover::before,
+.Btn2:hover::before {
+   background-position: right;
+   transition-duration: 1s;
+}
+
+.Btn:active,
+.Btn2:active {
    transform: scale(0.95);
 }
 
-.ghost:focus {
-   outline: none;
+/* Specific content for each button */
+.Btn::before {
+   content: "Login Page";
 }
 
-.main-btn {
-   transition: transform 0.2s, border 0.2s;
-   border: 2px solid transparent;
-   margin-top: 10px;
+.Btn2::before {
+   content: "Signup Page";
 }
 
-.main-btn:hover {
-   border-color: #ff416c;
-   background-color: #fff;
-   color: #ff416c;
-   transform: scale(1.0);
+/* Yoinked from CodePen, but improved the animation
+so that it is smooth among other more minor things */
+
+.codepen-button {
+   display: block;
+   cursor: pointer;
+   color: #fff;
+   margin: 15px auto auto auto;
+   position: relative;
+   text-decoration: none;
+   font-weight: 600;
+   border-radius: 10px;
+   overflow: hidden;
+   padding: 3px;
+   isolation: isolate;
+   border: 0;
+}
+
+.codepen-button:hover {
+   color: #fff;
+}
+
+.codepen-button::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 400%;
+   height: 100%;
+   background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+   background-size: 25% 100%;
+   animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+   animation-play-state: paused;
+   translate: -5% 0%;
+   transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+   animation-play-state: running;
+   transition-duration: 0.75s;
+   translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+   to {
+      transform: translateX(-25%);
+   }
+}
+
+.codepen-button span {
+   position: relative;
+   display: block;
+   padding: 0.5rem 1rem;
+   font-size: 1rem;
+   background: #000;
+   border-radius: 8px;
+   height: 100%;
 }
 
 .form-div {
@@ -126,7 +201,7 @@
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   padding: 0 50px;
+   padding: 35px 50px;
    height: 100%;
    text-align: center;
 }

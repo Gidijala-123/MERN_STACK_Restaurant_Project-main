@@ -105,7 +105,7 @@ function SignInForm() {
           />
           <span className="span-tag">{validation.passwordError}</span>
           <span className="span-tag">{validation.apiError}</span>
-          <button className="main-btn">Login</button>
+          <button class="codepen-button"><span className="btn-span">Login</span></button>
         </form>
       </div>
       <div className="overlay-container">
@@ -124,7 +124,7 @@ function SignInForm() {
             </button>
           </div>
           <div className="overlay-panel overlay-right">
-            <h1 className="heading-h1">Hello, Friend!</h1>
+            <h1>Hello, Friend!</h1>
             <p className="description">
               Enter your personal details and start your journey with us
             </p>

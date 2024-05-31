@@ -151,7 +151,7 @@ function Signup() {
             <span className="span-tag">{validation.passwordError}</span>
             <span className="span-tag">{validation.apiError}</span>
             <span className="span-tag">{validation.successMessage}</span>
-            <button className="main-btn">Register</button>
+            <button class="codepen-button"><span className="btn-span">Register</span></button>
           </form>
         </div>
         {type === "signIn" && <Login />}
@@ -163,7 +163,7 @@ function Signup() {
                 To keep connected with us please login with your personal info
               </p>
               <button
-                className="ghost"
+                className="Btn"
                 id="signIn"
                 onClick={() => toggleSignupLogin("signIn")}
               >
@@ -175,16 +175,12 @@ function Signup() {
               <p className="description">
                 Enter your personal details and start your journey with us
               </p>
-              
               <button
-                className="ghost"
+                className="Btn2"
                 id="signUp"
                 onClick={() => toggleSignupLogin("signUp")}
               >
-                Sign up
-                <div class="arrow-wrapper">
-                  <div class="arrow"></div>
-                </div>
+                SIGNUP
               </button>
             </div>
           </div>
