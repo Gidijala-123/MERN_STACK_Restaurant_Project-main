@@ -108,13 +108,13 @@ function Signup() {
           <form className="form-div" onSubmit={signupOnSubmit}>
             <div className="signup-heading">
               <h1 className="heading-h1">SIGNUP</h1>
-              <span className="span-tag">
+              {/* <span className="span-tag">
                 <img
                   className="heading-img"
                   src="/edit.png"
                   alt="signup-heading"
                 />
-              </span>
+              </span> */}
             </div>
             <input
               autoComplete="off"
@@ -171,16 +171,20 @@ function Signup() {
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1 className="heading-h1">Hello, Friend!</h1>
+              <h1>Hello, Friend!</h1>
               <p className="description">
                 Enter your personal details and start your journey with us
               </p>
+              
               <button
                 className="ghost"
                 id="signUp"
                 onClick={() => toggleSignupLogin("signUp")}
               >
-                SIGNUP
+                Sign up
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
               </button>
             </div>
           </div>
