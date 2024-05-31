@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const moment = require("moment");
 
-
 const EmployeeSchema = mongoose.Schema({
   uname: {
     type: String,
@@ -23,4 +22,4 @@ const EmployeeSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("emp_coll", EmployeeSchema);
+module.exports = mongoose.model("signupLogin_coll", EmployeeSchema);
