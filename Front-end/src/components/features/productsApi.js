@@ -1,13 +1,8 @@
-import {
-  createApi,
-  fetchBaseQuery
-} from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const productsApi = createApi({
   reducerPath: "productsApi",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://gbr-restaurant-backend.onrender.com"
-  }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:1234" }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: () => "products",
@@ -16,6 +11,4 @@ export const productsApi = createApi({
 });
 
 // creating a custom hook that can be access over the app
-export const {
-  useGetAllProductsQuery
-} = productsApi;
+export const { useGetAllProductsQuery } = productsApi;

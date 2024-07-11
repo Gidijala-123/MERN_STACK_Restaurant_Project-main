@@ -1,9 +1,5 @@
-import React, {
-  useState
-} from "react";
-import {
-  useNavigate
-} from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../signup/Signup.css";
 import Login from "../login/Login";
 import axios from "axios";
@@ -76,7 +72,8 @@ function Signup() {
 
     try {
       const res = await axios.post(
-        "https://gbr-restaurant-backend.onrender.com/api/signupLoginRouter/registerUser", {
+        "http://localhost:1234/api/signupLoginRouter/registerUser",
+        {
           uname,
           uemail,
           upassword,
@@ -101,130 +98,96 @@ function Signup() {
     }
   };
 
-  return ( <
-      div className = "signlog-div" >
-      <
-      div className = {
-        `container ${type === "signUp" ? "right-panel-active" : ""}`
-      }
-      id = "container" >
-      <
-      div className = "form-container sign-up-container" >
-      <
-      form className = "form-div"
-      onSubmit = {
-        signupOnSubmit
-      } >
-      <
-      div className = "signup-heading" >
-      <
-      h1 className = "heading-h1" > SIGNUP < /h1> {
-      /* <span className="span-tag">
-                      <img
-                        className="heading-img"
-                        src="/edit.png"
-                        alt="signup-heading"
-                      />
-                    </span> */
-    } <
-    /div> <
-  input autoComplete = "off"
-  required className = "text-input"
-  type = "text"
-  name = "name"
-  value = {
-    uname
-  }
-  onChange = {
-    (e) => setUname(e.target.value)
-  }
-  placeholder = "Enter your Name" /
-    >
-    <
-    span className = "span-tag" > {
-      validation.nameError
-    } < /span> <
-  input autoComplete = "off"
-  required className = "text-input"
-  type = "email"
-  name = "email"
-  value = {
-    uemail
-  }
-  onChange = {
-    (e) => setUemail(e.target.value)
-  }
-  placeholder = "Enter your Email" /
-    >
-    <
-    span className = "span-tag" > {
-      validation.emailError
-    } < /span> <
-  input autoComplete = "off"
-  required className = "text-input"
-  type = "password"
-  name = "password"
-  value = {
-    upassword
-  }
-  onChange = {
-    (e) => setUpassword(e.target.value)
-  }
-  placeholder = "Enter your Password" /
-    >
-    <
-    span className = "span-tag" > {
-      validation.passwordError
-    } < /span> <
-  span className = "span-tag" > {
-    validation.apiError
-  } < /span> <
-  span className = "span-tag" > {
-    validation.successMessage
-  } < /span> <
-  button class = "codepen-button" > < span className = "btn-span" > Register < /span></button >
-    <
-    /form> < /
-  div > {
-      type === "signIn" && < Login / >
-    } <
-    div className = "overlay-container" >
-    <
-    div className = "overlay" >
-    <
-    div className = "overlay-panel overlay-left" >
-    <
-    h1 > Welcome Back! < /h1> <
-  p className = "description" >
-    To keep connected with us please login with your personal info <
-    /p> <
-  button className = "Btn"
-  id = "signIn"
-  onClick = {
-      () => toggleSignupLogin("signIn")
-    } >
-    Login <
-    /button> < /
-  div > <
-    div className = "overlay-panel overlay-right" >
-    <
-    h1 > Hello, Friend! < /h1> <
-  p className = "description" >
-    Enter your personal details and start your journey with us <
-    /p> <
-  button className = "Btn2"
-  id = "signUp"
-  onClick = {
-      () => toggleSignupLogin("signUp")
-    } >
-    SIGNUP <
-    /button> < /
-  div > <
-    /div> < /
-  div > <
-    /div> < /
-  div >
-);
+  return (
+    <div className="signlog-div">
+      <div
+        className={`container ${type === "signUp" ? "right-panel-active" : ""}`}
+        id="container"
+      >
+        <div className="form-container sign-up-container">
+          <form className="form-div" onSubmit={signupOnSubmit}>
+            <div className="signup-heading">
+              <h1 className="heading-h1">SIGNUP</h1>
+              {/* <span className="span-tag">
+                <img
+                  className="heading-img"
+                  src="/edit.png"
+                  alt="signup-heading"
+                />
+              </span> */}
+            </div>
+            <input
+              autoComplete="off"
+              required
+              className="text-input"
+              type="text"
+              name="name"
+              value={uname}
+              onChange={(e) => setUname(e.target.value)}
+              placeholder="Enter your Name"
+            />
+            <span className="span-tag">{validation.nameError}</span>
+            <input
+              autoComplete="off"
+              required
+              className="text-input"
+              type="email"
+              name="email"
+              value={uemail}
+              onChange={(e) => setUemail(e.target.value)}
+              placeholder="Enter your Email"
+            />
+            <span className="span-tag">{validation.emailError}</span>
+            <input
+              autoComplete="off"
+              required
+              className="text-input"
+              type="password"
+              name="password"
+              value={upassword}
+              onChange={(e) => setUpassword(e.target.value)}
+              placeholder="Enter your Password"
+            />
+            <span className="span-tag">{validation.passwordError}</span>
+            <span className="span-tag">{validation.apiError}</span>
+            <span className="span-tag">{validation.successMessage}</span>
+            <button class="codepen-button"><span className="btn-span">Register</span></button>
+          </form>
+        </div>
+        {type === "signIn" && <Login />}
+        <div className="overlay-container">
+          <div className="overlay">
+            <div className="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p className="description">
+                To keep connected with us please login with your personal info
+              </p>
+              <button
+                className="Btn"
+                id="signIn"
+                onClick={() => toggleSignupLogin("signIn")}
+              >
+                Login
+              </button>
+            </div>
+            <div className="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p className="description">
+                Enter your personal details and start your journey with us
+              </p>
+              <button
+                className="Btn2"
+                id="signUp"
+                onClick={() => toggleSignupLogin("signUp")}
+              >
+                SIGNUP
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Signup;

@@ -1,7 +1,4 @@
-import {
-  createSlice,
-  createAsyncThunk
-} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -13,7 +10,7 @@ export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async (id = null, rejectWithValue) => {
     try {
-      const response = await axios.get("https://gbr-restaurant-backend.onrender.com/products");
+      const response = await axios.get("http://localhost:1234/products");
       //  It'll handle error if data is not found in response.data
       return response?.data;
     } catch (err) {
