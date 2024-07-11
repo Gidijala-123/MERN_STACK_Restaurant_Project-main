@@ -72,7 +72,7 @@ function Signup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:1234/api/signupLoginRouter/registerUser",
+        "https://mern-stack-restaurant-project-main.onrender.com/api/signupLoginRouter/registerUser",
         {
           uname,
           uemail,
@@ -107,15 +107,15 @@ function Signup() {
         <div className="form-container sign-up-container">
           <form className="form-div" onSubmit={signupOnSubmit}>
             <div className="signup-heading">
-              <h1 className="heading-h1">SIGNUP</h1>
+              <h1 className="heading-h1"> SIGNUP </h1>{" "}
               {/* <span className="span-tag">
-                <img
-                  className="heading-img"
-                  src="/edit.png"
-                  alt="signup-heading"
-                />
-              </span> */}
-            </div>
+                      <img
+                        className="heading-img"
+                        src="/edit.png"
+                        alt="signup-heading"
+                      />
+                    </span> */}{" "}
+            </div>{" "}
             <input
               autoComplete="off"
               required
@@ -126,7 +126,7 @@ function Signup() {
               onChange={(e) => setUname(e.target.value)}
               placeholder="Enter your Name"
             />
-            <span className="span-tag">{validation.nameError}</span>
+            <span className="span-tag"> {validation.nameError} </span>{" "}
             <input
               autoComplete="off"
               required
@@ -137,7 +137,7 @@ function Signup() {
               onChange={(e) => setUemail(e.target.value)}
               placeholder="Enter your Email"
             />
-            <span className="span-tag">{validation.emailError}</span>
+            <span className="span-tag"> {validation.emailError} </span>{" "}
             <input
               autoComplete="off"
               required
@@ -148,44 +148,47 @@ function Signup() {
               onChange={(e) => setUpassword(e.target.value)}
               placeholder="Enter your Password"
             />
-            <span className="span-tag">{validation.passwordError}</span>
-            <span className="span-tag">{validation.apiError}</span>
-            <span className="span-tag">{validation.successMessage}</span>
-            <button class="codepen-button"><span className="btn-span">Register</span></button>
-          </form>
-        </div>
-        {type === "signIn" && <Login />}
+            <span className="span-tag"> {validation.passwordError} </span>{" "}
+            <span className="span-tag"> {validation.apiError} </span>{" "}
+            <span className="span-tag"> {validation.successMessage} </span>{" "}
+            <button class="codepen-button">
+              {" "}
+              <span className="btn-span"> Register </span>
+            </button>
+          </form>{" "}
+        </div>{" "}
+        {type === "signIn" && <Login />}{" "}
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
+              <h1> Welcome Back! </h1>{" "}
               <p className="description">
-                To keep connected with us please login with your personal info
-              </p>
+                To keep connected with us please login with your personal info{" "}
+              </p>{" "}
               <button
                 className="Btn"
                 id="signIn"
                 onClick={() => toggleSignupLogin("signIn")}
               >
-                Login
-              </button>
-            </div>
+                Login{" "}
+              </button>{" "}
+            </div>{" "}
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
+              <h1> Hello, Friend! </h1>{" "}
               <p className="description">
-                Enter your personal details and start your journey with us
-              </p>
+                Enter your personal details and start your journey with us{" "}
+              </p>{" "}
               <button
                 className="Btn2"
                 id="signUp"
                 onClick={() => toggleSignupLogin("signUp")}
               >
-                SIGNUP
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+                SIGNUP{" "}
+              </button>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 }

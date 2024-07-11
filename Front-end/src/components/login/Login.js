@@ -49,7 +49,7 @@ function SignInForm() {
 
     try {
       const res = await axios.post(
-        "http://localhost:1234/api/signupLoginRouter/loginUser",
+        "https://mern-stack-restaurant-project-main.onrender.com/api/signupLoginRouter/loginUser",
         {
           uemail,
           upassword,
@@ -73,15 +73,15 @@ function SignInForm() {
       <div className="form-container sign-in-container">
         <form onSubmit={loginOnSubmit}>
           <div className="login-heading">
-            <h1 className="heading-h1">LOGIN</h1>
+            <h1 className="heading-h1"> LOGIN </h1>{" "}
             {/* <span>
-              <img
-                className="heading-img"
-                src="/password.png"
-                alt="login-heading"
-              />
-            </span> */}
-          </div>
+                    <img
+                      className="heading-img"
+                      src="/password.png"
+                      alt="login-heading"
+                    />
+                  </span> */}{" "}
+          </div>{" "}
           <input
             autoComplete="off"
             required
@@ -92,7 +92,7 @@ function SignInForm() {
             onChange={(e) => setUemail(e.target.value)}
             placeholder="Enter your Email"
           />
-          <span className="span-tag">{validation.emailError}</span>
+          <span className="span-tag"> {validation.emailError} </span>{" "}
           <input
             autoComplete="off"
             required
@@ -103,41 +103,44 @@ function SignInForm() {
             onChange={(e) => setUpassword(e.target.value)}
             placeholder="Enter your Password"
           />
-          <span className="span-tag">{validation.passwordError}</span>
-          <span className="span-tag">{validation.apiError}</span>
-          <button class="codepen-button"><span className="btn-span">Login</span></button>
-        </form>
-      </div>
+          <span className="span-tag"> {validation.passwordError} </span>{" "}
+          <span className="span-tag"> {validation.apiError} </span>{" "}
+          <button class="codepen-button">
+            {" "}
+            <span className="btn-span"> Login </span>
+          </button>
+        </form>{" "}
+      </div>{" "}
       <div className="overlay-container">
         <div className="overlay">
           <div className="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
+            <h1> Welcome Back! </h1>{" "}
             <p className="description">
-              To keep connected with us please login with your personal info
-            </p>
+              To keep connected with us please login with your personal info{" "}
+            </p>{" "}
             <button
               className="ghost"
               id="signIn"
               onClick={() => navigate("/login")}
             >
-              Login
-            </button>
-          </div>
+              Login{" "}
+            </button>{" "}
+          </div>{" "}
           <div className="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
+            <h1> Hello, Friend! </h1>{" "}
             <p className="description">
-              Enter your personal details and start your journey with us
-            </p>
+              Enter your personal details and start your journey with us{" "}
+            </p>{" "}
             <button
               className="ghost"
               id="signUp"
               onClick={() => navigate("/signup")}
             >
-              SIGNUP
-            </button>
-          </div>
-        </div>
-      </div>
+              SIGNUP{" "}
+            </button>{" "}
+          </div>{" "}
+        </div>{" "}
+      </div>{" "}
     </>
   );
 }
